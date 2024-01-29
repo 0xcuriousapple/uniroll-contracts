@@ -87,6 +87,10 @@ contract PayrollHandler is Ownable{
         }
         revert();
     }
+
+    function getReceivers() public view returns (address[]) {
+        return receivers;
+    }
     
     function record() external { // 0x266cf109
         require(msg.sender == hooksTrampoline, "incorrect caller");
